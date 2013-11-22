@@ -1,0 +1,34 @@
+<!-- This file provides the top section for administrator pages. -->
+
+<!-- This div will get an id based on the actual page being rendered
+     to allow for diferentiation of navlist styling according to which
+     page is being viewed -->
+
+<div class="banner" class="admin_banner" node="con:banner">
+  <script type="text/javascript">
+    function show_help()
+    {
+      var sect = '';
+      var i = window.location.pathname.lastIndexOf('/');
+      if (i != -1)
+        sect = window.location.pathname.slice(i+1);
+      
+      if (sect == 'collections')
+        sect = 'creating-a-collection';
+      else if (sect == 'search')
+        sect = 'simple-search';
+      else if (sect == 'advanced_search')
+        sect = 'advanced-search';
+      else if (sect == 'new')
+        sect = 'creating-a-collection';
+      else if (sect == 'view')
+        sect = 'editing-and-deleting-a-collection';
+        
+      window.open('/static/docs/reference.html#' + sect);
+    }
+  </script>
+
+  <span class="navlist">
+  </span>
+</div>
+
